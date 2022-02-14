@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  background-color: rgb(77, 77, 77);
+  height: 60px;
+  align-items: center;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  position: fixed;
+  height: 80%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex-direction: column;
+  min-width: 250px;
+  left: 0;
+  top: 0;
+  background-color: rgb(17, 17, 17);
+  align-items: center;
+  z-index: -1;
+  transform: translatex(-100%);
+  transition: all 1s;
+  opacity: 0;
+}
+
+nav ul li  p{
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+/* Hamburger menu */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  margin-left: 20px;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: none;
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+nav ul.slide {
+    transform: translatex(0);
+    opacity: 1;
+  }
+.menu-toggle span {
+    display: flex;
+  }
+/* Animasi */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+  background-color: #fff;
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+  background-color: #fff;
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+
+ 
+
